@@ -1,4 +1,4 @@
-# Arduino cRC32 Library
+# Arduino CRC32 Library
 
 This is an Arduino library to calculate CRC32 checksums of bytes.
 

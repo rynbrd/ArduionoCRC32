@@ -14,7 +14,7 @@ class Checksum {
         void update(uint8_t b);
 
         // Update the checksum with the bytes in a buffer.
-        void update(uint8_t* data, size_t len);
+        void update(const uint8_t* data, size_t len);
 
         // Return the current checksum value.
         uint32_t value() const;
@@ -27,7 +27,7 @@ class Checksum {
 };
 
 // Calculate a checksum from the provide buffer.
-uint32_t calculate(uint8_t* data, size_t len);
+uint32_t calculate(const uint8_t* data, size_t len);
 
 }  // namespace CRC32
 

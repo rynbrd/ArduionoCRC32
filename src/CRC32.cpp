@@ -61,7 +61,7 @@ void Checksum::update(uint8_t b) {
     value_ = (value_ >> 8) ^ kTable[(value_ ^ b) & 0xFF];
 }
 
-void Checksum::update(uint8_t* data, size_t len) {
+void Checksum::update(const uint8_t* data, size_t len) {
     for (size_t i = 0; i < len; ++i) {
         update(data[i]);
     }
@@ -75,7 +75,7 @@ void Checksum::reset() {
     value_ = 0xFFFFFFFF;
 }
 
-uint32_t calculate(uint8_t* data, size_t len) {
+uint32_t calculate(const uint8_t* data, size_t len) {
     Checksum cs;
     cs.update(data, len);
     return cs.value();
